@@ -37,7 +37,7 @@ public class Matrizador {
 
 	public static void reader() {
 		try {
-			Scanner file = new Scanner(new File("example_4.txt"));			
+			Scanner file = new Scanner(new File("example_3.txt")); //selecionar o arquivo wxemplo para execução			
 			x = file.nextInt(); //recebem os primeiros parametros inteiros
 			y = file.nextInt();
 			padrao = file.nextLine();
