@@ -11,7 +11,7 @@ public class Matrizador {
 	public static void main(String[] args) {
 		reader();
 		writer(vetor1);
-		menu();
+		menu(); //exibição das arrays cópias
 	}
 	
 	@SuppressWarnings("resource")
@@ -50,10 +50,10 @@ public class Matrizador {
 						int valor = Integer.parseInt(padrao.substring(f, g));//corta a string por caracter
 						vetor1[i][j] = valor;
 						if (valor == 1) {
-							vetor2[i][j] = 2;
+							vetor2[i][j] = 2; //troca os valores que são = 1 para = 2
 						}
 						if (valor == 0) {
-							vetor3[i][j] = 2;
+							vetor3[i][j] = 2; //troca os valores que são = 0 para = 2
 						}
 						f++;
 						g++;
