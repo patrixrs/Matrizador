@@ -3,12 +3,36 @@ import java.util.Scanner;
 
 public class Matrizador {
 	static String padrao;
-	static int x, y, f, g;
-	static String[][] vetor = new String[11][11];
+	static int x, y, f, g, resp;
+	static int[][] vetor1 = new int[11][11];
+	static int[][] vetor2 = new int[11][11];
+	static int[][] vetor3 = new int[11][11];
 
 	public static void main(String[] args) {
 		reader();
-		writer();
+		writer(vetor1);
+		menu();
+	}
+	
+	@SuppressWarnings("resource")
+	private static void menu() {
+		Scanner e = new Scanner(System.in);
+		System.out.println("\nSelecio 1 ou 2 para ver os vetores cópias ou 3 para sair:");
+		resp = e.nextInt();
+		switch (resp) {
+		case 1:
+			writer(vetor2);
+			menu();
+			break;
+		case 2:
+			writer(vetor3);
+			menu();
+			break;
+		case 3:			
+			break;
+		default:
+			break;
+		}
 	}
 
 	public static void reader() {
@@ -23,7 +47,14 @@ public class Matrizador {
 					f = 0;
 					g = 1;
 					for (int j = 0; j < x; j++) {
-						vetor[i][j] = padrao.substring(f, g);  //corta a string por caracter
+						int valor = Integer.parseInt(padrao.substring(f, g));//corta a string por caracter
+						vetor1[i][j] = valor;
+						if (valor == 1) {
+							vetor2[i][j] = 2;
+						}
+						if (valor == 0) {
+							vetor3[i][j] = 2;
+						}
 						f++;
 						g++;
 					}
@@ -35,7 +66,7 @@ public class Matrizador {
 		}
 	}
 
-	public static void writer() {
+	public static void writer(int[][] vetor) {
 		for (int i = 0; i < y; i++) {
 			for (int j = 0; j < x; j++) {
 				System.out.print("|");
