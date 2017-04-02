@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Matrizador {
 	static String padrao;
 	static int x, y, f, g;
-	static String[][] vetor = new String[10][10];
+	static String[][] vetor = new String[11][11];
 
 	public static void main(String[] args) {
 		reader();
@@ -13,17 +13,17 @@ public class Matrizador {
 
 	public static void reader() {
 		try {
-			Scanner file = new Scanner(new File("example_4.txt"));
+			Scanner file = new Scanner(new File("example_4.txt"));			
+			x = file.nextInt(); //recebem os primeiros parametros inteiros
+			y = file.nextInt();
 			padrao = file.nextLine();
-			x = Integer.parseInt(padrao.substring(0, 1));
-			y = Integer.parseInt(padrao.substring(2));
 			while (file.hasNext()) {
 				for (int i = 0; i < y; i++) {
-					padrao = file.nextLine();
+					padrao = file.nextLine(); //recebe a linha como string
 					f = 0;
 					g = 1;
 					for (int j = 0; j < x; j++) {
-						vetor[i][j] = padrao.substring(f, g);
+						vetor[i][j] = padrao.substring(f, g);  //corta a string por caracter
 						f++;
 						g++;
 					}
