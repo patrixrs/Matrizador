@@ -54,6 +54,8 @@ public class Matrizador {
 						}
 						if (valor == 0) {
 							vetor3[i][j] = 2; //troca os valores que são = 0 para = 2
+						} else {
+							vetor3[i][j] = 1; //retorna os valores de 1
 						}
 						f++;
 						g++;
